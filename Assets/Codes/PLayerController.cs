@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+
 public class PLayerController : MonoBehaviour
 {
     public Animator animator;
@@ -15,18 +16,13 @@ public class PLayerController : MonoBehaviour
     public int stage;
     public int exits;
     bool move;
-    //Rigidbody rb;
     public float moveDuration = 0.3f;
     public Ease moveEase = Ease.OutQuad;
-
     public AudioClip Pick_up;
     public AudioSource audio_source;
 
-    //public EnableColiider EC;
-   
     void Start()
     {
-        //rb = GetComponent<Rigidbody>();
         MyMaterial = transform.GetChild(0).GetComponent<SkinnedMeshRenderer>().material;
         Bag = transform.GetChild(2).gameObject;
         animator = GetComponent<Animator>();
@@ -35,25 +31,23 @@ public class PLayerController : MonoBehaviour
         stage = 0;
         keepbricks();
         move = true;
-        //EC.enabled = false;
     }
+
     void Update()
     {
         if (move)
         {
             if (Input.GetMouseButtonDown(0))
             {
-                //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
                 animator.SetTrigger("Run");
             }
             if (Input.GetMouseButtonUp(0))
             {
-                //rb.constraints |= ~RigidbodyConstraints.FreezePositionZ;
                 animator.SetTrigger("Idle");
             }
-
         }
     }
+
     void FixedUpdate()
     {
         if (Input.GetMouseButton(0) && move)
@@ -62,7 +56,7 @@ public class PLayerController : MonoBehaviour
             {
                 Vector3 direction = Vector3.forward * Input.GetAxis("Mouse Y") + Vector3.right * Input.GetAxis("Mouse X");
                 transform.Translate(Vector3.forward * 6 * Time.deltaTime);
-                //rb.constraints &= ~RigidbodyConstraints.FreezePositionZ;
+
                 if (direction != Vector3.zero)
                 {
                     transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(direction), 8.5f * Time.deltaTime);
@@ -70,6 +64,7 @@ public class PLayerController : MonoBehaviour
             }
         }
     }
+
     public void sendallbrikesback()
     {
         int tempsize = Bag.transform.childCount;
@@ -78,13 +73,12 @@ public class PLayerController : MonoBehaviour
             Bag.transform.GetChild(0).GetComponent<AddMaterials>().BackToFirstPosition();
         }
     }
+
     public void OnTriggerExit(Collider other)
     {
-    
         if (other.gameObject.tag == "gate")
         {
             other.gameObject.tag = "Untagged";
-            //trail.Assign_color();
             other.gameObject.transform.GetChild(0).GetComponent<BoxCollider>().isTrigger = false;
             stage++;
             if (stage <= 2)
@@ -98,15 +92,10 @@ public class PLayerController : MonoBehaviour
             if (exits == 2)
             {
                 exits = 0;
-                //transform.GetChild(3).GetComponent<stepmaker>().buildagain();
             }
         }
-
-        //if (other.gameObject.CompareTag("Stairs"))
-        //{
-        //    EC.enabled = false;
-        //}
     }
+
     public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bot"))
@@ -121,40 +110,85 @@ public class PLayerController : MonoBehaviour
             }
         }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("cude"))
         {
-            if (move)
-            { 
-                //if (collision.gameObject.GetComponent<MeshRenderer>().material == MyMaterial)
-                if (other.gameObject.GetComponent<MeshRenderer>().material.color == MyMaterial.color && other.gameObject.name == "player")
-                {
-                    GameObject a = other.gameObject;
-                    audio_source.PlayOneShot(Pick_up);
-                    //a.transform.parent = Bag.transform;
-                    //a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
-                    //a.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            if (move && IsCorrectBrick(other))
+            {
+                GameObject brick = other.gameObject;
+                audio_source.PlayOneShot(Pick_up);
 
-                    a.transform.DOMove(Bag.transform.position, moveDuration).SetEase(moveEase).OnComplete(() =>
-                    {
-                        // Once the item has reached the bag, make it a child of the bag
-                        a.transform.SetParent(Bag.transform);
-                        a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
-                        a.transform.localRotation = Quaternion.identity;
-                        //a.GetComponent<ParticleSystem>().Stop();
-                    });
-                } 
+                // Immediately parent the brick to the Bag to follow the player's movement
+                brick.transform.SetParent(Bag.transform);
+
+                // Start the coroutine to smoothly move the brick to the correct stacking position
+                StartCoroutine(SmoothMoveToBag(brick));
             }
         }
-        //if (other.gameObject.CompareTag("Stairs"))
-        //{
-        //    EC.enabled = true;
-        //}
+        else if (other.gameObject.CompareTag("BrickBuster"))
+        { 
+            GameObject newBrick = other.gameObject;
+            // Handle BrickBuster trigger: add 5 bricks
+            for (int i = 0; i < 5; i++)
+            {
+               GameObject NewBricks = Instantiate(newBrick, other.transform.position, Quaternion.identity);
+                NewBricks.GetComponent<MeshRenderer>().material = MyMaterial; // Match player's material
+                audio_source.PlayOneShot(Pick_up);
+
+                // Parent each new brick to Bag and apply the same stacking animation
+                NewBricks.transform.SetParent(Bag.transform);
+                StartCoroutine(SmoothMoveToBag(NewBricks));
+            }
+        }
+
         if (other.gameObject.tag == "nth")
         {
             other.transform.root.GetComponent<Eliminater>().thischar(gameObject);
         }
+    }
+
+    private IEnumerator SmoothMoveToBag(GameObject brick)
+    {
+        Vector3 targetPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
+
+        brick.transform.DOLocalJump(targetPosition, 2.5f, 1, 0.4f)
+            .SetEase(moveEase)
+            .OnComplete(() =>
+            {
+                AttachToBag(brick);
+            });
+
+        while (brick.transform.localPosition != targetPosition)
+        {
+            brick.transform.localPosition = Vector3.Lerp(brick.transform.localPosition, targetPosition, Time.deltaTime * 5f);
+            yield return null;
+        }
+    }
+
+    private bool IsCorrectBrick(Collider other)
+    {
+        return other.gameObject.GetComponent<MeshRenderer>().material.color == MyMaterial.color;
+    }
+
+    private Vector3 BagChildPos()
+    {
+        if (Bag.transform.childCount > 0)
+        {
+            Transform lastBrick = Bag.transform.GetChild(Bag.transform.childCount - 1);
+            return lastBrick.position + new Vector3(0, 0.25f, 0);
+        }
+        else
+        {
+            return Bag.transform.position;
+        }
+    }
+
+    private void AttachToBag(GameObject brick)
+    {
+        brick.transform.localPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
+        brick.transform.localRotation = Quaternion.identity;
     }
 
     public void keepbricks()
@@ -162,6 +196,7 @@ public class PLayerController : MonoBehaviour
         mytiles = mytargetparents[stage].gameObject;
         mytargetparents[stage].GetComponent<ColorPlacer>().assigncolor(gameObject, "player");
     }
+
     IEnumerator stand()
     {
         animator.SetTrigger("knock");

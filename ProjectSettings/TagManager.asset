@@ -15,6 +15,7 @@ TagManager:
   - 4X
   - PlayersParent
   - Stairs
+  - BrickBuster
   layers:
   - Default
   - TransparentFX
