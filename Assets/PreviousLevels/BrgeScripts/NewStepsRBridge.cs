@@ -14,6 +14,9 @@ public class NewStepsRBridge : MonoBehaviour
     public string name;
     public List<Collider> c1;
     RaycastHit hit;
+    public AudioClip Set_step;
+    public AudioSource audio_source;
+    int counter = 0;
     void Start()
     {
         // AIcontroller = transform.parent.root.gameObject.GetComponent<AIcontroler_Bridge>();
@@ -39,6 +42,7 @@ public class NewStepsRBridge : MonoBehaviour
                         int size = bag.transform.childCount - 1;
                         if (name == "bot")
                         {
+                           
                             meshRenderer.material.color = player.color;
                             GameObject back = bag.transform.GetChild(size).transform.gameObject;
                             //if (back.GetComponent<Materialsaddr_Bridge>().paarent == AIcontroller.mytiles)
@@ -64,10 +68,14 @@ public class NewStepsRBridge : MonoBehaviour
                     }
                     if (name != "bot")
                     {
-                        if (Input.GetMouseButton(0))
+                       
+                        if (Input.GetMouseButton(0) && bag.transform.childCount > 0 )
                         {
+                            
+                           
                             if (meshRenderer.material.color == player.color)
                             {
+                               
                                 a.GetComponents<BoxCollider>()[0].enabled = false;
                             }
                         }
@@ -90,6 +98,7 @@ public class NewStepsRBridge : MonoBehaviour
             }
         }
     }
+    
     public void buildBrgR_again()
     {
         for (int i = 0; i < c1.Count; i++)

@@ -1,5 +1,7 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 public class NewBridgePlayerController : MonoBehaviour
 {
@@ -14,6 +16,13 @@ public class NewBridgePlayerController : MonoBehaviour
     public int stage;
     public int exits;
     public bool move;
+    private bool isBrickMoving;
+    public float moveDuration = 0.3f;
+    public Ease moveEase = Ease.OutQuad;
+
+    public AudioClip Pick_up;
+    public AudioSource audio_source;
+
     void Start()
     {
         Time.timeScale = 1;
@@ -101,16 +110,20 @@ public class NewBridgePlayerController : MonoBehaviour
             {
                 if (collision.gameObject.GetComponent<MeshRenderer>().material.color == MyMaterial.color)
                 {
+                    audio_source.PlayOneShot(Pick_up);
                     GameObject a = collision.gameObject;
                     a.transform.parent = Bag.transform;
-                    a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
-                    a.transform.localRotation = Quaternion.Euler(0, 0, 0);
+                    StartCoroutine(SmoothMoveToBag(a));
+                   
+                    //a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
+                    //a.transform.localRotation = Quaternion.Euler(0, 0, 0);
                 }
             }
+            Invoke(nameof(isMoving), .5f);
         }
         if (collision.gameObject.CompareTag("Bot"))
         {
-            if (Bag.transform.childCount != 0 && exits == 0)
+            if (Bag.transform.childCount != 0 && exits == 0 && !isBrickMoving)
             {
                 //if (collision.gameObject.transform.GetComponent<AIcontroler_Bridge>().Bag.transform.childCount > Bag.transform.childCount)
                 //{
@@ -123,6 +136,39 @@ public class NewBridgePlayerController : MonoBehaviour
             }
         }
     }
+
+    private IEnumerator SmoothMoveToBag(GameObject brick)
+    {
+        isBrickMoving = true;
+        Vector3 targetPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
+
+        brick.transform.DOLocalJump(targetPosition, 2.5f, 1, 0.4f)
+            .SetEase(moveEase)
+            .OnComplete(() =>
+            {
+                AttachToBag(brick);
+
+            });
+
+        while (brick.transform.localPosition != targetPosition)
+        {
+            brick.transform.localPosition = Vector3.Lerp(brick.transform.localPosition, targetPosition, Time.deltaTime * 25);
+
+            yield return null;
+        }
+    }
+
+    private void AttachToBag(GameObject brick)
+    {
+        brick.transform.localPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
+        brick.transform.localRotation = Quaternion.identity;
+       
+    }
+    private void isMoving()
+    {
+        isBrickMoving = false;
+    }
+
     public void keepBrgR_bricks()
     {
         mytiles = mytargetparents[stage].gameObject;

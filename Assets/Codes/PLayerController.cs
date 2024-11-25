@@ -1,6 +1,7 @@
 ﻿using DG.Tweening;
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 public class PLayerController : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class PLayerController : MonoBehaviour
 
     public AudioClip Pick_up;
     public AudioSource audio_source;
+    bool isBrickMoving;
 
     //public EnableColiider EC;
    
@@ -111,7 +113,7 @@ public class PLayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Bot"))
         {
-            if (Bag.transform.childCount != 0 && exits == 0)
+            if (Bag.transform.childCount != 0 && exits == 0 && !isBrickMoving)
             {
                 if (collision.gameObject.transform.GetComponent<AIcontroller>().Bag.transform.childCount > Bag.transform.childCount)
                 {
@@ -132,18 +134,21 @@ public class PLayerController : MonoBehaviour
                 {
                     GameObject a = other.gameObject;
                     audio_source.PlayOneShot(Pick_up);
+                    a.transform.SetParent(Bag.transform);
+                    StartCoroutine(SmoothMoveToBag(a));
                     //a.transform.parent = Bag.transform;
                     //a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
                     //a.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
-                    a.transform.DOMove(Bag.transform.position, moveDuration).SetEase(moveEase).OnComplete(() =>
-                    {
-                        // Once the item has reached the bag, make it a child of the bag
-                        a.transform.SetParent(Bag.transform);
-                        a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
-                        a.transform.localRotation = Quaternion.identity;
-                        //a.GetComponent<ParticleSystem>().Stop();
-                    });
+                    //this is ComMemberType by nadeem
+                    //a.transform.DOMove(Bag.transform.position, moveDuration).SetEase(moveEase).OnComplete(() =>
+                    //{
+                    //    // Once the item has reached the bag, make it a child of the bag
+                    //    a.transform.SetParent(Bag.transform);
+                    //    a.transform.localPosition = new Vector3(Bag.transform.localPosition.x, (Bag.transform.childCount * 0.25f), Bag.transform.localPosition.z);
+                    //    a.transform.localRotation = Quaternion.identity;
+                    //    //a.GetComponent<ParticleSystem>().Stop();
+                    //});
                 } 
             }
         }
@@ -156,7 +161,36 @@ public class PLayerController : MonoBehaviour
             other.transform.root.GetComponent<Eliminater>().thischar(gameObject);
         }
     }
+    private IEnumerator SmoothMoveToBag(GameObject brick)
+    {
+        isBrickMoving = true;
+        Vector3 targetPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
 
+        brick.transform.DOLocalJump(targetPosition, 2.5f, 1, 0.4f)
+            .SetEase(moveEase)
+            .OnComplete(() =>
+            {
+                AttachToBag(brick);
+                
+            });
+
+        while (brick.transform.localPosition != targetPosition)
+        {
+            brick.transform.localPosition = Vector3.Lerp(brick.transform.localPosition, targetPosition, Time.deltaTime * 5);
+            
+            yield return null;
+        }
+    }
+    private void AttachToBag(GameObject brick)
+    {
+        brick.transform.localPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
+        brick.transform.localRotation = Quaternion.identity;
+        Invoke(nameof(isMoving), .3f);
+    }
+    private void isMoving()
+    {
+        isBrickMoving = false;
+    }
     public void keepbricks()
     {
         mytiles = mytargetparents[stage].gameObject;
