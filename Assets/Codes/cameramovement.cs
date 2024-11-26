@@ -43,7 +43,7 @@ public class cameramovement : MonoBehaviour
         won.SetActive(false);
         low = -1;
         //PlayerPrefs.SetInt("ShowInter", 0);
-
+        CASAds.instance.ShowBanner(CAS.AdPosition.BottomCenter);
     }
     void FixedUpdate()
     {
@@ -61,17 +61,10 @@ public class cameramovement : MonoBehaviour
             }
         }
     }
-    //public void ShowAd()
-    //{
-    //if (PlayerPrefs.GetInt("ShowInter") == 0)
-    //{
-    //    PlayerPrefs.SetInt("ShowInter", 1);
-    //    if (Application.internetReachability != NetworkReachability.NotReachable)
-    //    {
-    // AdsManager.Instance.ShowPriorityInterstitial();
-    //    }
-    //}
-    //}
+    public void ShowAd()
+    {
+        CASAds.instance?.ShowInterstitial();
+    }
     public void eliminater(List<GameObject> arethere)
     {
         //print("eliminater");
@@ -102,7 +95,7 @@ public class cameramovement : MonoBehaviour
             if (firstst.tag == "Player" || secondnd.tag == "Player" || third.tag == "Player")
             {
                 Invoke(nameof(Complete), 0.5f);
-                // ShowAd();
+                 ShowAd();
                 if (firstst.tag == "Player")
                 {
                     ui.instance.LevelCompleteCoins(20);
@@ -122,7 +115,7 @@ public class cameramovement : MonoBehaviour
             else
             {
                 Invoke(nameof(LevelFail), 0.5f);
-                //  ShowAd();
+                  ShowAd();
                 // print("if here");
             }
             declarewin(firstst, secondnd, third);
@@ -143,7 +136,7 @@ public class cameramovement : MonoBehaviour
                         Invoke(nameof(LevelFail), 0.5f);
                         ui.instance.CurrentLvlNum.gameObject.SetActive(false);
                         ui.instance.PauseBtn.gameObject.SetActive(false);
-                        //  ShowAd();
+                          ShowAd();
                         if (PlayerPrefs.GetInt("sounds") == 1)
                         {
                             gamelost.GetComponent<AudioSource>().Play();
@@ -174,6 +167,7 @@ public class cameramovement : MonoBehaviour
         }
         //Time.timeScale = 0;
         gamelost.SetActive(true);
+        GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Fail, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("level"));
         ui.instance.LevelFailCoin();
         Pause.SetActive(false);
         //HereAdsManager.Instance.ShowAdMobBanner();
@@ -186,6 +180,7 @@ public class cameramovement : MonoBehaviour
         aa = false;
         ranks = true;
         won.SetActive(true);
+        GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Complete, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("level"));
         if (PlayerPrefs.GetInt("sounds") == 1)
         {
             won.GetComponent<AudioSource>().Play();

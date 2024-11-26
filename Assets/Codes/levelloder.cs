@@ -27,7 +27,7 @@ public class levelloder : MonoBehaviour
             PlayerPrefs.SetInt("music", 1);
             PlayerPrefs.SetInt("vibrate", 1);
         }
-        Invoke(nameof(Load), 1f);
+        Invoke(nameof(Load), 12f);
         //AdsManager.Instance.ShowAdMobBanner();
     }
 

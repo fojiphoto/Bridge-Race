@@ -17,7 +17,7 @@ public class NewBridgeUIDeem : MonoBehaviour
         loading.SetActive(false);
 
         Debug.Log("Level bridges start " + PlayerPrefs.GetInt("LevelBrgs"));
-        // GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Start, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("LevelBrgs"));
+         GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Start, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("level"));
         Invoke(nameof(next), .5f);
 
     }

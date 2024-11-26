@@ -78,7 +78,7 @@ public class ui : MonoBehaviour
         PauseBtn.gameObject.SetActive(false);
         noCoinsTween = noCoinsAnim.GetComponent<DOTweenAnimation>();
         Obj_text.text = PlayerPrefs.GetString("UserName");
-
+        GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Start, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("level"));
         if (PlayerPrefs.GetInt("FTR") == 1)
         {
             PlayerPrefs.SetInt("FTR", 0);
@@ -283,6 +283,7 @@ public class ui : MonoBehaviour
     {
         Invoke(nameof(restartlevel), 0.5f);
         PlayerPrefs.SetInt("FTR", 1);
+        CASAds.instance.ShowInterstitial();
         //AdsManager.Instance.ShowChartBoostInterstitial();
         Time.timeScale = 1;
     }
@@ -377,7 +378,8 @@ public class ui : MonoBehaviour
     public void WatchAdToGetCoins()
     {
         //HereAdsManager.Instance.CoinReward();
-        CoinRewarded();
+        CASAds.instance.ShowRewarded(CoinRewarded);
+       // CoinRewarded();
     }
     public void CoinRewarded()
     {
@@ -432,7 +434,8 @@ public class ui : MonoBehaviour
     public void XReward()
     {
         neddleAnim.enabled = false;
-        Xrewarded();
+        CASAds.instance.ShowRewarded(Xrewarded);
+        //Xrewarded();
         //HereAdsManager.Instance.CoinRewardX();
     }
     public void Xrewarded()
