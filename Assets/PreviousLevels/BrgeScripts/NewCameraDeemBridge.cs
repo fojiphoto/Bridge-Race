@@ -33,6 +33,8 @@ public class NewCameraDeemBridge : MonoBehaviour
         }
         level = PlayerPrefs.GetInt("LevelBrgs");
 
+
+        transform.position = new Vector3(0, 16.22f, -15.3f);
     }
     void Start()
     {

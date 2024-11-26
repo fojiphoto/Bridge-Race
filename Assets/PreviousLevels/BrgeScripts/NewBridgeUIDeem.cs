@@ -10,6 +10,8 @@ public class NewBridgeUIDeem : MonoBehaviour
 {
 
     public GameObject loading;
+
+
     private void Start()
     {
         loading.SetActive(false);
@@ -121,16 +123,19 @@ public class NewBridgeUIDeem : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
         //cameramovr_Bridge.Instance.won.SetActive(false);
-        NewCameraDeemBridge.Instance.won.SetActive(false);
+       // NewCameraDeemBridge.Instance.won.SetActive(false);
+       NewCameraDeemBridge.Instance.panelController.WinPanel.SetActive(false);
         loading.SetActive(true);
         Debug.Log("bridge :" + PlayerPrefs.GetInt("brglevel", 1));
         if (PlayerPrefs.GetInt("LevelBrgs") == PlayerPrefs.GetInt("brglevel", 1))
         {
             PlayerPrefs.SetInt("brglevel", PlayerPrefs.GetInt("brglevel", 1) + 1);
-            PlayerPrefs.SetInt("LevelBrgs", PlayerPrefs.GetInt("LevelBrgs") + 1);
+           // PlayerPrefs.SetInt("LevelBrgs", PlayerPrefs.GetInt("LevelBrgs") + 1);
         }
         //PlayerPrefs.SetInt("brglevel", PlayerPrefs.GetInt("brglevel",1) + 1);
         yield return new WaitForSeconds(1.0f);
+        PlayerPrefs.SetInt("LevelBrgs", PlayerPrefs.GetInt("LevelBrgs") + 1);
+        PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
         PlayerPrefs.SetInt("BridgeeLevels", PlayerPrefs.GetInt("BridgeeLevels", 16) + 1);
         Debug.Log("bridge after :" + PlayerPrefs.GetInt("brglevel"));
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);

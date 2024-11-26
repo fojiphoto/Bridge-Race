@@ -31532,6 +31532,8 @@ MonoBehaviour:
   bag: {fileID: 0}
   name: bot
   c1: []
+  Set_step: {fileID: 0}
+  audio_source: {fileID: 0}
 --- !u!1 &881609893
 GameObject:
   m_ObjectHideFlags: 0
@@ -32186,6 +32188,8 @@ MonoBehaviour:
   bag: {fileID: 0}
   name: bot
   c1: []
+  Set_step: {fileID: 0}
+  audio_source: {fileID: 0}
 --- !u!1001 &898908715
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37366,6 +37370,10 @@ MonoBehaviour:
   stage: 0
   exits: 0
   move: 0
+  moveDuration: 0.3
+  moveEase: 1
+  Pick_up: {fileID: 8300000, guid: b9ea3c819749548b58d1001e604f11c3, type: 3}
+  audio_source: {fileID: 963194230}
 --- !u!1 &1045061068
 GameObject:
   m_ObjectHideFlags: 0
@@ -45966,6 +45974,8 @@ MonoBehaviour:
   bag: {fileID: 0}
   name: 
   c1: []
+  Set_step: {fileID: 0}
+  audio_source: {fileID: 0}
 --- !u!1 &1291126223
 GameObject:
   m_ObjectHideFlags: 0
@@ -73069,6 +73079,8 @@ MonoBehaviour:
   bag: {fileID: 0}
   name: bot
   c1: []
+  Set_step: {fileID: 0}
+  audio_source: {fileID: 0}
 --- !u!1001 &1881991241
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -152,7 +152,7 @@ public class NewBridgePlayerController : MonoBehaviour
 
         while (brick.transform.localPosition != targetPosition)
         {
-            brick.transform.localPosition = Vector3.Lerp(brick.transform.localPosition, targetPosition, Time.deltaTime * 25);
+            brick.transform.localPosition = Vector3.Lerp(brick.transform.localPosition, targetPosition, Time.deltaTime * 5);
 
             yield return null;
         }

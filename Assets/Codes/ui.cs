@@ -404,10 +404,11 @@ public class ui : MonoBehaviour
         mainmenu.SetActive(false);
         StartGame();
         int sceneNumber = PlayerPrefs.GetInt("level");
-        if (sceneNumber > 19)
-            sceneNumber = Random.Range(8, 19);
+        if (sceneNumber > 29)
+            sceneNumber = Random.Range(8, 29);
         PlayerPrefs.SetInt("FTR", 1);
-        SceneManager.LoadScene(sceneNumber);
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(sceneNumber+1);
         //HereAdsManager.Instance.HideAdMobBanner();
     }
     public void PauseGame()
