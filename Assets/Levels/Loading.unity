@@ -1930,7 +1930,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d21b37ac616a3f45ac1e41e8113c4ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bg: {fileID: 8300000, guid: a27b27b3ce82cab428a6cce9056b3db1, type: 3}
+  bg: {fileID: 8300000, guid: c66759d7dbdabb8449ec6ccd9117cbdc, type: 3}
 --- !u!1 &1169050793
 GameObject:
   m_ObjectHideFlags: 0

@@ -247,8 +247,8 @@ PlayerSettings:
   AndroidTargetDevices: 0
   AndroidSplashScreenScale: 2
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: F:/KeyStores/FSKeystore/FS.keystore
-  AndroidKeyaliasName: factorialstudio
+  AndroidKeystoreName: F:/KeyStores/OrbitKeyStore/OrbetGamesGlobal-Syedisthe_silentkiller_7860.keystore
+  AndroidKeyaliasName: orbetgamesglobal
   AndroidBuildApkPerCpuArchitecture: 0
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

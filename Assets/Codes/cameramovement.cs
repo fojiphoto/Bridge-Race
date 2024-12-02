@@ -28,6 +28,9 @@ public class cameramovement : MonoBehaviour
         {
             Instance = this;
         }
+       // transform.position = new Vector3(0, 11, -14.7f);
+       // transform.position = new Vector3(0, 10.71f, -18.61f);
+        transform.position = new Vector3(0, 9.51f, -16.94f);
     }
     void Start()
     {

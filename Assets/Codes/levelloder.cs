@@ -33,7 +33,7 @@ public class levelloder : MonoBehaviour
 
     public void Load()
     {
-        SceneManager.LoadSceneAsync(2);
+        SceneManager.LoadSceneAsync(1);
         //if (PlayerPrefs.GetInt("LevelBrgs")<=11)
         //{
         //    SceneManager.LoadSceneAsync(PlayerPrefs.GetInt("LevelBrgs"));

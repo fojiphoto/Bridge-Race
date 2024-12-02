@@ -71,8 +71,11 @@ public class NewStepsRBridge : MonoBehaviour
                        
                         if (Input.GetMouseButton(0) && bag.transform.childCount > 0 )
                         {
-                            
-                           
+
+                            if ((meshRenderer.material.color == player.color && !c1.Contains(a.GetComponents<BoxCollider>()[0])))
+                            {
+                                PlayStepSound();
+                            }
                             if (meshRenderer.material.color == player.color)
                             {
                                
@@ -98,7 +101,18 @@ public class NewStepsRBridge : MonoBehaviour
             }
         }
     }
-    
+
+    void PlayStepSound()
+    {
+        if (audio_source != null && Set_step != null)
+        {
+            if (!audio_source.isPlaying) // Check if no sound is currently playing
+            {
+                audio_source.PlayOneShot(Set_step);
+            }
+        }
+    }
+
     public void buildBrgR_again()
     {
         for (int i = 0; i < c1.Count; i++)

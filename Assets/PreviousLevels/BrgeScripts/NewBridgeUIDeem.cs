@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+
 //using IdyllicGames;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,12 +12,15 @@ public class NewBridgeUIDeem : MonoBehaviour
 {
 
     public GameObject loading;
-
+    public TextMeshProUGUI mainMenuCoins;
+    public TextMeshProUGUI levelNo;
+   
 
     private void Start()
     {
         loading.SetActive(false);
-
+        mainMenuCoins.text = PlayerPrefs.GetInt("coins").ToString();
+        levelNo.text = PlayerPrefs.GetInt("level").ToString();
         Debug.Log("Level bridges start " + PlayerPrefs.GetInt("LevelBrgs"));
          GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Start, "Mode Bridge Runner", "Level " + PlayerPrefs.GetInt("level"));
         Invoke(nameof(next), .5f);
@@ -41,7 +46,7 @@ public class NewBridgeUIDeem : MonoBehaviour
     }
     void Update()
     {
-
+        mainMenuCoins.text = PlayerPrefs.GetInt("coins").ToString();
     }
     public void BrgR_MainMenubutton()
     {
@@ -61,7 +66,7 @@ public class NewBridgeUIDeem : MonoBehaviour
         NewCameraDeemBridge.Instance.pausePanel.SetActive(false);
         loading.SetActive(true);
         yield return new WaitForSeconds(8.0f);
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("StartLevel");
     }
     IEnumerator BrgR_ret()
     {

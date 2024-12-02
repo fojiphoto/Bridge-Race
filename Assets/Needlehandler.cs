@@ -11,19 +11,44 @@ public class Needlehandler : MonoBehaviour
         // Check the tag of the other game object
         if (other.CompareTag("2X"))
         {
-            ui.instance.Multiplier(2);
+            if(NewCameraDeemBridge.Instance != null)
+            {
+                NewCameraDeemBridge.Instance.panelController.Multiplier(2);
+            }
+            if (ui.instance != null)
+            {
+                ui.instance.Multiplier(2);
+            }
+            
             //uiText.text = "2X";
             //ui.instance.Rewardx = 2;
         }
         else if (other.CompareTag("3X"))
         {
-            ui.instance.Multiplier(3);
+            if (NewCameraDeemBridge.Instance != null)
+            {
+                NewCameraDeemBridge.Instance.panelController.Multiplier(3);
+            }
+            if (ui.instance != null)
+            {
+                ui.instance.Multiplier(3);
+            }
+           
             //uiText.text = "3X";
             //ui.instance.Rewardx = 3;
         }
         else if (other.CompareTag("4X"))
         {
-            ui.instance.Multiplier(4);
+            if (NewCameraDeemBridge.Instance != null)
+            {
+                NewCameraDeemBridge.Instance.panelController.Multiplier(4);
+            }
+            if (ui.instance != null)
+            {
+               
+                ui.instance.Multiplier(4);
+            }
+           
             //uiText.text = "4X";
             //ui.instance.Rewardx = 4;
         }

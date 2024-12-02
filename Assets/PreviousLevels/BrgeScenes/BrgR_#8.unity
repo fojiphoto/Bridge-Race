@@ -12991,6 +12991,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 981483827, guid: 36fb6e0511b0dc34eaa6310bfa589ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 981483827, guid: 36fb6e0511b0dc34eaa6310bfa589ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_Target
+      value: 
+      objectReference: {fileID: 963194231}
+    - target: {fileID: 981483827, guid: 36fb6e0511b0dc34eaa6310bfa589ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
+      value: PauseGame
+      objectReference: {fileID: 0}
+    - target: {fileID: 981483827, guid: 36fb6e0511b0dc34eaa6310bfa589ced, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
+      value: NewCameraDeemBridge, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 5267905633343624224, guid: 36fb6e0511b0dc34eaa6310bfa589ced,
         type: 3}
       propertyPath: m_Name
@@ -13009,7 +13025,7 @@ PrefabInstance:
     - target: {fileID: 5267905633343624236, guid: 36fb6e0511b0dc34eaa6310bfa589ced,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 5267905633343624236, guid: 36fb6e0511b0dc34eaa6310bfa589ced,
         type: 3}
@@ -33683,7 +33699,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: c66759d7dbdabb8449ec6ccd9117cbdc, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -36641,7 +36657,7 @@ MonoBehaviour:
   move: 0
   moveDuration: 0.3
   moveEase: 1
-  Pick_up: {fileID: 8300000, guid: b9ea3c819749548b58d1001e604f11c3, type: 3}
+  Pick_up: {fileID: 8300000, guid: 0acf3d603957a514d99c64f4c64a5334, type: 3}
   audio_source: {fileID: 963194230}
 --- !u!1 &1048286737
 GameObject:
@@ -44341,8 +44357,8 @@ MonoBehaviour:
   bag: {fileID: 0}
   name: 
   c1: []
-  Set_step: {fileID: 0}
-  audio_source: {fileID: 0}
+  Set_step: {fileID: 8300000, guid: b9ea3c819749548b58d1001e604f11c3, type: 3}
+  audio_source: {fileID: 963194230}
 --- !u!1001 &1290989043
 PrefabInstance:
   m_ObjectHideFlags: 0

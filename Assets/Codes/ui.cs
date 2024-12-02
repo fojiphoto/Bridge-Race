@@ -209,8 +209,9 @@ public class ui : MonoBehaviour
     {
         currentChNum = num;
         //HereAdsManager.Instance.UnlockCharacter();
+        CASAds.instance.ShowRewarded(PurchaseOnAd);
     }
-
+    
     public void PurchaseOnAd()
     {
         pricetag[currentChNum].SetActive(false);
@@ -312,6 +313,8 @@ public class ui : MonoBehaviour
         }
 
     }
+
+    
     public void MusicOnOff()
     {
         music = !music;
@@ -410,11 +413,12 @@ public class ui : MonoBehaviour
             sceneNumber = Random.Range(8, 29);
         PlayerPrefs.SetInt("FTR", 1);
        // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        SceneManager.LoadScene(sceneNumber+1);
+        SceneManager.LoadScene(sceneNumber);
         //HereAdsManager.Instance.HideAdMobBanner();
     }
     public void PauseGame()
     {
+        CASAds.instance.ShowInterstitial();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         //HereAdsManager.Instance.ShowAdMobBanner();
@@ -536,6 +540,7 @@ public class ui : MonoBehaviour
     public void no_thanksAd()
     {
         //AdsManager.Instance.ShowPriorityInterstitial();
+        CASAds.instance.ShowInterstitial();
     }
     public void Afterwatch()
     {
@@ -548,7 +553,15 @@ public class ui : MonoBehaviour
     }
     public void Rate_Us()
     {
-        Application.OpenURL("amzn://apps/android?p=" + Application.identifier);
+        Application.OpenURL("https://play.google.com/store/apps/details?id="+ Application.identifier);
+    }
+    public void Privacy()
+    {
+        Application.OpenURL("https://orbitgamesglobal-privacy-policy.blogspot.com/");
+    }
+    public void MoreGames()
+    {
+        Application.OpenURL("https://play.google.com/store/apps/developer?id=Orbit+Games+Global");
     }
 
     public void ShowBanner()

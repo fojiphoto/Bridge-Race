@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+
 //using TurnTheGameOn.Timer;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -21,6 +23,9 @@ public class PanelController : MonoBehaviour
     public Button Home3;
     public Button Resume;
     public Action NextBtnClick;
+    private int Rewardx;
+    public Text multiplierText;
+
     void Start()
     {
         Next.onClick.AddListener(()=>NextBtnClick.Invoke());
@@ -41,11 +46,22 @@ public class PanelController : MonoBehaviour
     {
         
     }
+    public void Doublecoins()
+    {
+        CASAds.instance.ShowRewarded(() => {
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx*20);
+        });
+    }
 
+    public void Multiplier(int num)
+    {
+        Rewardx = num;
+        multiplierText.text = num + "X";
+    }
     public void Home()
     {
         Time.timeScale = 1.0f;
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("StartLevel");
         //if (SaveDogAudioManager.instance)
         //{
         //    SaveDogAudioManager.instance.destroy();

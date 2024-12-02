@@ -1,0 +1,86 @@
+{
+  "project_info": {
+    "project_number": "600527186482",
+    "project_id": "orbit-games-3c686",
+    "storage_bucket": "orbit-games-3c686.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600527186482:android:6ee4de154624575c4aea2b",
+        "android_client_info": {
+          "package_name": "com.og.parking"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsciOsN1bmTkIiX53hnipiBvcxbhVYRi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600527186482:android:41d23859bc07ad484aea2b",
+        "android_client_info": {
+          "package_name": "com.ogg.bobandcont"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsciOsN1bmTkIiX53hnipiBvcxbhVYRi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600527186482:android:d68bf60b8f301d024aea2b",
+        "android_client_info": {
+          "package_name": "com.ogg.bridge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsciOsN1bmTkIiX53hnipiBvcxbhVYRi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:600527186482:android:798f0bbdda9c1e0b4aea2b",
+        "android_client_info": {
+          "package_name": "com.ogg.space.puzzle.merge"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCsciOsN1bmTkIiX53hnipiBvcxbhVYRi0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

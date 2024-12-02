@@ -22,7 +22,10 @@ public class AudioManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(gameObject);
         }
-        
+        if (!PlayerPrefs.HasKey("music"))
+        {
+            PlayerPrefs.SetInt("music",1);
+        }
         gameObject.AddComponent<AudioSource>();
         Bg = GetComponent<AudioSource>();
         Bg.loop = true;
