@@ -66,6 +66,20 @@ public class NewBridgePlayerController : MonoBehaviour
             }
         }
     }
+    public void sendallBrgR_brikesbackMinus(int bricksToSendBack)
+    {
+        int tempsize = Bag.transform.childCount;
+
+        // Process only the smaller of tempsize or bricksToSendBack
+        int bricksToProcess = Mathf.Min(tempsize, bricksToSendBack);
+
+        for (int i = 0; i < bricksToProcess; i++)
+        {
+            Bag.transform.GetChild(Bag.transform.childCount - 1).GetComponent<NewMaterialsAddBridge>().BackBrgR_ToFirstPosition();
+        }
+    }
+
+
     public void sendallBrgR_brikesback()
     {
         int tempsize = Bag.transform.childCount;
@@ -77,6 +91,7 @@ public class NewBridgePlayerController : MonoBehaviour
     }
     public void OnTriggerExit(Collider other)
     {
+        
         if (other.gameObject.tag == "gate")
         {
             other.gameObject.tag = "Untagged";
@@ -104,6 +119,37 @@ public class NewBridgePlayerController : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
+        if (collision.gameObject.CompareTag("TenX"))
+        {
+            CASAds.instance.ShowRewarded(() => {
+                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+                Debug.Log("All cudes" + allCudes.Length);
+                StartCoroutine(MoveBricksToBagSequentially(allCudes, 10));
+                collision.gameObject.tag = "Untagged";
+               
+            });
+            // Get all "cude" bricks in the scene
+            Destroy(collision.gameObject.transform.parent.gameObject);
+        }
+        if (collision.gameObject.CompareTag("Twox"))
+        {
+            CASAds.instance.ShowRewarded(() => {
+                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+                Debug.Log("All cudes" + allCudes.Length);
+                int bricksToMove = Bag.transform.childCount * 2;
+                StartCoroutine(MoveBricksToBagSequentially(allCudes, bricksToMove));
+                collision.gameObject.tag = "Untagged";
+               
+            });
+            // Get all "cude" bricks in the scene
+            Destroy(collision.gameObject.transform.parent.gameObject);
+        }
+        if (collision.gameObject.CompareTag("MinusNine"))
+        {
+            sendallBrgR_brikesbackMinus(9);
+            collision.gameObject.tag = "Untagged";
+            Destroy(collision.gameObject.transform.parent.gameObject);
+        }
         if (collision.gameObject.CompareTag("cude"))
         {
             if (move)
@@ -137,12 +183,42 @@ public class NewBridgePlayerController : MonoBehaviour
         }
     }
 
+    private IEnumerator MoveBricksToBagSequentially(GameObject[] allCudes, int bricksToMove)
+    {
+        int movedBricks = 0;
+        List<GameObject> bagChildren = new List<GameObject>();
+        for (int i = 0; i < Bag.transform.childCount; i++)
+        {
+            bagChildren.Add(Bag.transform.GetChild(i).gameObject);
+        }
+        foreach (GameObject cude in allCudes)
+        {
+            if (bagChildren.Contains(cude))
+            {
+                continue;
+            }
+            // Check if brick color matches the player's material color
+            if (cude.GetComponent<MeshRenderer>().material.color == MyMaterial.color)
+            {
+                cude.transform.parent = Bag.transform;
+                StartCoroutine(SmoothMoveToBag(cude)); // Smoothly move to bag
+                movedBricks++;
+
+                if (movedBricks >= bricksToMove)
+                    break; // Stop after moving the desired number of bricks
+
+                yield return new WaitForSeconds(.1f); // Wait for 1 second before moving the next brick
+                audio_source.PlayOneShot(Pick_up);
+            }
+        }
+    }
+
     private IEnumerator SmoothMoveToBag(GameObject brick)
     {
         isBrickMoving = true;
         Vector3 targetPosition = new Vector3(0, Bag.transform.childCount * 0.25f, 0);
 
-        brick.transform.DOLocalJump(targetPosition, 2.5f, 1, 0.4f)
+        brick.transform.DOLocalJump(targetPosition, 2.5f, 1, 0.2f)
             .SetEase(moveEase)
             .OnComplete(() =>
             {

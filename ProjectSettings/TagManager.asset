@@ -15,6 +15,17 @@ TagManager:
   - 4X
   - PlayersParent
   - Stairs
+  - Handle
+  - X4
+  - X4_1
+  - X3
+  - X5
+  - X3_1
+  - X2_1
+  - X2
+  - Twox
+  - TenX
+  - MinusNine
   layers:
   - Default
   - TransparentFX

@@ -167,6 +167,8 @@ public class NewCameraDeemBridge : MonoBehaviour
     public void showWin()
     {
          CASAds.instance?.ShowInterstitial();
+        panelController.levelCoins.text = 20.ToString();
+        panelController.LevelNo.text ="LEVEL"+level.ToString();
         panelController.WinPanel.SetActive(true);
         //won.SetActive(true);
         Debug.Log("Bridge LevelComplete " + level);

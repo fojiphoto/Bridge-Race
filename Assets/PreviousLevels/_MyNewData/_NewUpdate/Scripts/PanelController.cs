@@ -25,6 +25,8 @@ public class PanelController : MonoBehaviour
     public Action NextBtnClick;
     private int Rewardx;
     public Text multiplierText;
+    public TextMeshProUGUI LevelNo;
+    public TextMeshProUGUI levelCoins;
 
     void Start()
     {
@@ -46,10 +48,16 @@ public class PanelController : MonoBehaviour
     {
         
     }
+
+    public void Nothanks()
+    {
+        PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + 20);
+    }
     public void Doublecoins()
     {
         CASAds.instance.ShowRewarded(() => {
             PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx*20);
+            levelCoins.text = (Rewardx * 20).ToString();
         });
     }
 
