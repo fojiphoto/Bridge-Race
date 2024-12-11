@@ -1,23 +1,22 @@
 <dependencies>
   <packages>
-    <package>androidx.lifecycle:lifecycle-process:2.6.2</package>
-    <package>com.cleveradssolutions:applovin:12.6.0.0</package>
-    <package>com.cleveradssolutions:bigo:4.9.0.0</package>
-    <package>com.cleveradssolutions:cas-promo:3.9.3</package>
-    <package>com.cleveradssolutions:cas-sdk:3.9.3</package>
-    <package>com.cleveradssolutions:chartboost:9.7.0.0</package>
-    <package>com.cleveradssolutions:google:23.3.0.0</package>
-    <package>com.cleveradssolutions:inmobi:10.7.5.0</package>
-    <package>com.cleveradssolutions:ironsource:8.2.1.2</package>
-    <package>com.cleveradssolutions:kidoz:9.1.2.0</package>
-    <package>com.cleveradssolutions:pangle:6.1.0.9</package>
-    <package>com.cleveradssolutions:unity:4.12.2.0</package>
-    <package>com.cleveradssolutions:vungle:7.4.0.1</package>
+    <package>androidx.recyclerview:recyclerview:1.2.1</package>
+    <package>com.applovin.mediation:chartboost-adapter:9.7.0.3</package>
+    <package>com.applovin.mediation:fyber-adapter:8.3.3.0</package>
+    <package>com.applovin.mediation:ironsource-adapter:8.5.0.0.0</package>
+    <package>com.applovin.mediation:mintegral-adapter:16.8.91.0</package>
+    <package>com.applovin.mediation:unityads-adapter:4.12.5.0</package>
+    <package>com.applovin.mediation:vungle-adapter:7.4.2.1</package>
+    <package>com.applovin:applovin-sdk:13.0.0</package>
+    <package>com.google.android.gms:play-services-appset:16.0.2</package>
+    <package>com.google.android.gms:play-services-base:16.1.0</package>
+    <package>com.google.android.instantapps:instantapps:1.1.0</package>
+    <package>com.google.android.ump:user-messaging-platform:2.+</package>
   </packages>
   <files />
   <settings>
     <setting name="androidAbis" value="arm64-v8a,armeabi-v7a" />
-    <setting name="bundleId" value="com.ogg.bridge" />
+    <setting name="bundleId" value="com.rts.bridge.runner" />
     <setting name="explodeAars" value="True" />
     <setting name="gradleBuildEnabled" value="True" />
     <setting name="gradlePropertiesTemplateEnabled" value="True" />

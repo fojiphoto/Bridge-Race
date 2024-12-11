@@ -565,15 +565,15 @@ public class ui : MonoBehaviour
     }
     public void Rate_Us()
     {
-        Application.OpenURL("https://play.google.com/store/apps/details?id="+ Application.identifier);
+        Application.OpenURL("");
     }
     public void Privacy()
     {
-        Application.OpenURL("https://orbitgamesglobal-privacy-policy.blogspot.com/");
+        Application.OpenURL("https://factorialstudio.blogspot.com/2023/01/privacy-policy.html");
     }
     public void MoreGames()
     {
-        Application.OpenURL("https://play.google.com/store/apps/developer?id=Orbit+Games+Global");
+        Application.OpenURL("https://www.amazon.com/s?i=mobile-apps&rh=p_4%3ARIFTWAVE+TECH+%28SMC-PRIVATE%29+LIMITED&search-type=ss");
     }
 
     public void ShowBanner()
