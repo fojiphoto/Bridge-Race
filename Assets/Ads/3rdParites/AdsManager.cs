@@ -151,7 +151,7 @@ public class AdsManager : MonoBehaviour
         MaxSdk.SetHasUserConsent(true);
         //MaxSdk.SetIsAgeRestrictedUser(false);
         MaxSdk.SetDoNotSell(false);
-        
+        InitializeMRecAds();
         InitializeInterstitialAds();
         InitializeRewardedAds();
        //InitializeAppOpenAds();
@@ -200,7 +200,7 @@ public class AdsManager : MonoBehaviour
         MaxSdkCallbacks.MRec.OnAdRevenuePaidEvent += OnMRecAdRevenuePaidEvent;
 
         // MRECs are automatically sized to 300x250.
-        MaxSdk.CreateMRec(RecID, MaxSdkBase.AdViewPosition.BottomCenter);
+        MaxSdk.CreateMRec(RecID, MaxSdkBase.AdViewPosition.TopLeft);
     }
 
     public void ShowMRec()

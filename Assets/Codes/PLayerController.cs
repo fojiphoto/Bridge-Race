@@ -126,6 +126,12 @@ public class PLayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("TenX"))
         {
             //Nadeem Ads
+            AdsManager.instance.ShowRewardedAd(() => {
+                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+                Debug.Log("All cudes" + allCudes.Length);
+                StartCoroutine(MoveBricksToBagSequentially(allCudes, 10));
+                // collision.gameObject.tag = "Untagged";
+            });
             //CASAds.instance.ShowRewarded(() => {
             //    GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
             //    Debug.Log("All cudes" + allCudes.Length);
@@ -139,6 +145,13 @@ public class PLayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Twox"))
         {
             //Nadeem Ads
+            AdsManager.instance.ShowRewardedAd(() => {
+                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+                Debug.Log("All cudes" + allCudes.Length);
+                int bricksToMove = Bag.transform.childCount * 2;
+                StartCoroutine(MoveBricksToBagSequentially(allCudes, bricksToMove));
+                //collision.gameObject.tag = "Untagged";
+            });
             //CASAds.instance.ShowRewarded(() => {
             //    GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
             //    Debug.Log("All cudes" + allCudes.Length);

@@ -47,6 +47,7 @@ public class cameramovement : MonoBehaviour
         low = -1;
         //PlayerPrefs.SetInt("ShowInter", 0);
         //Nadeem Ads
+        AdsManager.instance.ShowBanner();
         //CASAds.instance.ShowBanner(CAS.AdPosition.BottomCenter);
     }
     void FixedUpdate()
@@ -68,6 +69,7 @@ public class cameramovement : MonoBehaviour
     public void ShowAd()
     {
         //Nadeem Ads
+        AdsManager.instance.ShowInterstitialWithoutConditions("");
         //CASAds.instance?.ShowInterstitial();
     }
     public void eliminater(List<GameObject> arethere)

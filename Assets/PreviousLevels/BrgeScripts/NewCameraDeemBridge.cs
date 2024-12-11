@@ -114,6 +114,7 @@ public class NewCameraDeemBridge : MonoBehaviour
             else
             {
                 //Nadeem Ads
+                AdsManager.instance.ShowInterstitialWithoutConditions("");
                 //CASAds.instance?.ShowInterstitial();
                 // gamelost.SetActive(true);
                 panelController.LossPanel.SetActive(true);
@@ -122,6 +123,7 @@ public class NewCameraDeemBridge : MonoBehaviour
             }
             //BrgR_declarewin(firstst, secondnd, third);
             //Nadeem Ads
+            AdsManager.instance.ShowInterstitialWithoutConditions("");
             //CASAds.instance?.ShowInterstitial();
             //AdsManager.instance.ShowInterstitialWithoutConditions();
             //AdManager_IdyllicGames.ShowInterstitial();
@@ -145,6 +147,7 @@ public class NewCameraDeemBridge : MonoBehaviour
                         //nadeem
                         //AdsManager.instance.ShowInterstitialWithoutConditions();
                         //Nadeem Ads
+                        AdsManager.instance.ShowInterstitialWithoutConditions("");
                         //CASAds.instance?.ShowInterstitial();
                         //AdManager_IdyllicGames.ShowInterstitial();
 
@@ -169,7 +172,8 @@ public class NewCameraDeemBridge : MonoBehaviour
     public void showWin()
     {
         //Nadeem Ads
-       // CASAds.instance?.ShowInterstitial();
+        // CASAds.instance?.ShowInterstitial();
+        AdsManager.instance.ShowInterstitialWithoutConditions("");
         panelController.levelCoins.text = 20.ToString();
         panelController.LevelNo.text ="LEVEL"+level.ToString();
         panelController.WinPanel.SetActive(true);
@@ -197,6 +201,7 @@ public class NewCameraDeemBridge : MonoBehaviour
         panelController.PausePanel.SetActive(true);
         //pausePanel.SetActive(true);
         //Nadeem Ads
+        AdsManager.instance.ShowInterstitialWithoutConditions("");
         //CASAds.instance?.ShowInterstitial();
         Time.timeScale = 0;
     }

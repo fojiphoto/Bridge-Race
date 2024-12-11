@@ -56,6 +56,10 @@ public class PanelController : MonoBehaviour
     public void Doublecoins()
     {
         //Nadeem Ads
+        AdsManager.instance.ShowRewardedAd(() => {
+            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx * 20);
+            levelCoins.text = (Rewardx * 20).ToString();
+        });
         //CASAds.instance.ShowRewarded(() => {
         //    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx*20);
         //    levelCoins.text = (Rewardx * 20).ToString();
