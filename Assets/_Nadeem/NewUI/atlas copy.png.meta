@@ -119,10 +119,10 @@ TextureImporter:
       name: atlas copy_0
       rect:
         serializedVersion: 2
-        x: 27
-        y: 1857
-        width: 507
-        height: 164
+        x: 17
+        y: 1830
+        width: 529
+        height: 197
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -161,10 +161,10 @@ TextureImporter:
       name: atlas copy_2
       rect:
         serializedVersion: 2
-        x: 664
-        y: 1912
-        width: 356
-        height: 124
+        x: 665
+        y: 1918
+        width: 353
+        height: 122
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -455,10 +455,10 @@ TextureImporter:
       name: atlas copy_16
       rect:
         serializedVersion: 2
-        x: 20
-        y: 1620
-        width: 181
-        height: 189
+        x: 13
+        y: 1598
+        width: 196
+        height: 219
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -476,10 +476,10 @@ TextureImporter:
       name: atlas copy_17
       rect:
         serializedVersion: 2
-        x: 234
-        y: 1621
-        width: 179
-        height: 187
+        x: 227
+        y: 1598
+        width: 194
+        height: 217
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -497,10 +497,10 @@ TextureImporter:
       name: atlas copy_18
       rect:
         serializedVersion: 2
-        x: 446
-        y: 1622
-        width: 182
-        height: 188
+        x: 439
+        y: 1597
+        width: 196
+        height: 220
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -519,9 +519,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 654
-        y: 1622
-        width: 182
-        height: 188
+        y: 1599
+        width: 197
+        height: 218
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -539,10 +539,10 @@ TextureImporter:
       name: atlas copy_20
       rect:
         serializedVersion: 2
-        x: 884
-        y: 1641
-        width: 147
-        height: 174
+        x: 867
+        y: 1604
+        width: 181
+        height: 215
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -560,10 +560,10 @@ TextureImporter:
       name: atlas copy_21
       rect:
         serializedVersion: 2
-        x: 1063
-        y: 1641
-        width: 146
-        height: 174
+        x: 1065
+        y: 1615
+        width: 180
+        height: 214
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -581,8 +581,8 @@ TextureImporter:
       name: atlas copy_22
       rect:
         serializedVersion: 2
-        x: 1243
-        y: 1641
+        x: 1260
+        y: 1642
         width: 146
         height: 174
       alignment: 0
@@ -875,8 +875,8 @@ TextureImporter:
       name: atlas copy_37
       rect:
         serializedVersion: 2
-        x: 1132
-        y: 1512
+        x: 1126
+        y: 1513
         width: 46
         height: 61
       alignment: 0
@@ -896,8 +896,8 @@ TextureImporter:
       name: atlas copy_39
       rect:
         serializedVersion: 2
-        x: 1196
-        y: 1513
+        x: 1191
+        y: 1512
         width: 64
         height: 64
       alignment: 0
@@ -938,10 +938,10 @@ TextureImporter:
       name: atlas copy_41
       rect:
         serializedVersion: 2
-        x: 1120
-        y: 1208
-        width: 273
-        height: 285
+        x: 1115
+        y: 1197
+        width: 284
+        height: 301
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -959,10 +959,10 @@ TextureImporter:
       name: atlas copy_42
       rect:
         serializedVersion: 2
-        x: 1428
-        y: 1208
-        width: 273
-        height: 285
+        x: 1422
+        y: 1195
+        width: 285
+        height: 303
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1169,10 +1169,10 @@ TextureImporter:
       name: atlas copy_52
       rect:
         serializedVersion: 2
-        x: 1109
-        y: 1068
-        width: 320
-        height: 107
+        x: 1102
+        y: 1061
+        width: 334
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1190,10 +1190,10 @@ TextureImporter:
       name: atlas copy_53
       rect:
         serializedVersion: 2
-        x: 1458
-        y: 1068
-        width: 320
-        height: 107
+        x: 1451
+        y: 1061
+        width: 334
+        height: 121
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1253,10 +1253,10 @@ TextureImporter:
       name: atlas copy_56
       rect:
         serializedVersion: 2
-        x: 1112
-        y: 856
-        width: 482
-        height: 179
+        x: 1107
+        y: 829
+        width: 493
+        height: 215
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1379,10 +1379,10 @@ TextureImporter:
       name: atlas copy_62
       rect:
         serializedVersion: 2
-        x: 1115
-        y: 631
-        width: 481
-        height: 182
+        x: 1109
+        y: 604
+        width: 493
+        height: 215
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1463,8 +1463,8 @@ TextureImporter:
       name: atlas copy_66
       rect:
         serializedVersion: 2
-        x: 1756
-        y: 676
+        x: 1758
+        y: 695
         width: 91
         height: 77
       alignment: 0
@@ -1484,8 +1484,8 @@ TextureImporter:
       name: atlas copy_67
       rect:
         serializedVersion: 2
-        x: 1858
-        y: 679
+        x: 1861
+        y: 698
         width: 94
         height: 72
       alignment: 0
@@ -1526,8 +1526,8 @@ TextureImporter:
       name: atlas copy_70
       rect:
         serializedVersion: 2
-        x: 1869
-        y: 583
+        x: 1871
+        y: 601
         width: 73
         height: 81
       alignment: 0
@@ -1568,10 +1568,10 @@ TextureImporter:
       name: atlas copy_72
       rect:
         serializedVersion: 2
-        x: 11
-        y: 320
-        width: 958
-        height: 319
+        x: 6
+        y: 309
+        width: 976
+        height: 339
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1610,10 +1610,10 @@ TextureImporter:
       name: atlas copy_74
       rect:
         serializedVersion: 2
-        x: 19
+        x: 16
         y: 153
-        width: 582
-        height: 126
+        width: 594
+        height: 145
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1631,10 +1631,10 @@ TextureImporter:
       name: atlas copy_75
       rect:
         serializedVersion: 2
-        x: 663
-        y: 230
-        width: 195
-        height: 63
+        x: 630
+        y: 239
+        width: 198
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1652,10 +1652,10 @@ TextureImporter:
       name: atlas copy_76
       rect:
         serializedVersion: 2
-        x: 1040
-        y: 103
-        width: 958
-        height: 321
+        x: 1035
+        y: 93
+        width: 977
+        height: 339
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1673,10 +1673,10 @@ TextureImporter:
       name: atlas copy_77
       rect:
         serializedVersion: 2
-        x: 660
-        y: 149
-        width: 198
-        height: 63
+        x: 643
+        y: 153
+        width: 189
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -1716,7 +1716,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 1841
-        y: 1044
+        y: 1046
         width: 106
         height: 106
       alignment: 0
@@ -1736,8 +1736,8 @@ TextureImporter:
       name: atlas copy_38
       rect:
         serializedVersion: 2
-        x: 888
-        y: 170
+        x: 874
+        y: 159
         width: 117
         height: 117
       alignment: 0
@@ -1757,8 +1757,8 @@ TextureImporter:
       name: atlas copy_68
       rect:
         serializedVersion: 2
-        x: 877
-        y: 68
+        x: 863
+        y: 57
         width: 145
         height: 86
       alignment: 0
@@ -1778,9 +1778,9 @@ TextureImporter:
       name: atlas copy_79
       rect:
         serializedVersion: 2
-        x: 1287
+        x: 1281
         y: 1505
-        width: 95
+        width: 96
         height: 117
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -1799,12 +1799,12 @@ TextureImporter:
       name: atlas copy_80
       rect:
         serializedVersion: 2
-        x: 1035
-        y: 8
+        x: 1023
+        y: 3
         width: 90
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1820,12 +1820,12 @@ TextureImporter:
       name: atlas copy_81
       rect:
         serializedVersion: 2
-        x: 1134
-        y: 8
+        x: 1122
+        y: 3
         width: 90
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1841,12 +1841,12 @@ TextureImporter:
       name: atlas copy_82
       rect:
         serializedVersion: 2
-        x: 1233
-        y: 8
+        x: 1221
+        y: 3
         width: 101
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1862,12 +1862,12 @@ TextureImporter:
       name: atlas copy_83
       rect:
         serializedVersion: 2
-        x: 1343
-        y: 8
+        x: 1331
+        y: 3
         width: 170
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1883,12 +1883,12 @@ TextureImporter:
       name: atlas copy_84
       rect:
         serializedVersion: 2
-        x: 1522
-        y: 8
+        x: 1510
+        y: 3
         width: 101
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1904,12 +1904,12 @@ TextureImporter:
       name: atlas copy_85
       rect:
         serializedVersion: 2
-        x: 1632
-        y: 8
+        x: 1620
+        y: 3
         width: 90
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -1925,12 +1925,12 @@ TextureImporter:
       name: atlas copy_86
       rect:
         serializedVersion: 2
-        x: 1731
-        y: 8
+        x: 1719
+        y: 3
         width: 90
         height: 85
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []

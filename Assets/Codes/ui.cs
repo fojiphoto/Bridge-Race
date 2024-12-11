@@ -569,11 +569,11 @@ public class ui : MonoBehaviour
     }
     public void Privacy()
     {
-        Application.OpenURL("https://factorialstudio.blogspot.com/2023/01/privacy-policy.html");
+        Application.OpenURL("https://orbitgamesglobal-privacy-policy.blogspot.com/");
     }
     public void MoreGames()
     {
-        Application.OpenURL("https://www.amazon.com/s?i=mobile-apps&rh=p_4%3ARIFTWAVE+TECH+%28SMC-PRIVATE%29+LIMITED&search-type=ss");
+        Application.OpenURL("https://www.amazon.com/s?i=mobile-apps&rh=p_4%3AOrbit+Games+Global&search-type=ss");
     }
 
     public void ShowBanner()
