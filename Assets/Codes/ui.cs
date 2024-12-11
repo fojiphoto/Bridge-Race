@@ -209,7 +209,8 @@ public class ui : MonoBehaviour
     {
         currentChNum = num;
         //HereAdsManager.Instance.UnlockCharacter();
-        CASAds.instance.ShowRewarded(PurchaseOnAd);
+        //Nadeem Ads
+        //CASAds.instance.ShowRewarded(PurchaseOnAd);
     }
     
     public void PurchaseOnAd()
@@ -284,7 +285,8 @@ public class ui : MonoBehaviour
     {
         Invoke(nameof(restartlevel), 0.5f);
         PlayerPrefs.SetInt("FTR", 1);
-        CASAds.instance.ShowInterstitial();
+        //Nadeem Ads
+        //CASAds.instance.ShowInterstitial();
         //AdsManager.Instance.ShowChartBoostInterstitial();
         Time.timeScale = 1;
     }
@@ -381,7 +383,8 @@ public class ui : MonoBehaviour
     public void WatchAdToGetCoins()
     {
         //HereAdsManager.Instance.CoinReward();
-        CASAds.instance.ShowRewarded(CoinRewarded);
+        //Nadeem Ads
+        //CASAds.instance.ShowRewarded(CoinRewarded);
        // CoinRewarded();
     }
     public void CoinRewarded()
@@ -418,7 +421,8 @@ public class ui : MonoBehaviour
     }
     public void PauseGame()
     {
-        CASAds.instance.ShowInterstitial();
+        //Nadeem Ads
+        //CASAds.instance.ShowInterstitial();
         Time.timeScale = 0;
         PauseMenu.SetActive(true);
         //HereAdsManager.Instance.ShowAdMobBanner();
@@ -438,7 +442,8 @@ public class ui : MonoBehaviour
     public void XReward()
     {
         neddleAnim.enabled = false;
-        CASAds.instance.ShowRewarded(Xrewarded);
+        //Nadeem Ads
+        //CASAds.instance.ShowRewarded(Xrewarded);
         //Xrewarded();
         //HereAdsManager.Instance.CoinRewardX();
     }
@@ -540,7 +545,8 @@ public class ui : MonoBehaviour
     public void no_thanksAd()
     {
         //AdsManager.Instance.ShowPriorityInterstitial();
-        CASAds.instance.ShowInterstitial();
+        //Nadeem Ads
+        //CASAds.instance.ShowInterstitial();
     }
     public void Afterwatch()
     {

@@ -46,7 +46,8 @@ public class cameramovement : MonoBehaviour
         won.SetActive(false);
         low = -1;
         //PlayerPrefs.SetInt("ShowInter", 0);
-        CASAds.instance.ShowBanner(CAS.AdPosition.BottomCenter);
+        //Nadeem Ads
+        //CASAds.instance.ShowBanner(CAS.AdPosition.BottomCenter);
     }
     void FixedUpdate()
     {
@@ -66,7 +67,8 @@ public class cameramovement : MonoBehaviour
     }
     public void ShowAd()
     {
-        CASAds.instance?.ShowInterstitial();
+        //Nadeem Ads
+        //CASAds.instance?.ShowInterstitial();
     }
     public void eliminater(List<GameObject> arethere)
     {

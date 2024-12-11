@@ -5,12 +5,14 @@ using UnityEngine;
 public class CFPMrec : MonoBehaviour
 {
     private void OnEnable() {
-        CASAds.instance.ShowMrecBanner(CAS.AdPosition.TopLeft);
-       // AdsManager.instance.ShowMRec();
+        //Nadeem Ads
+        //CASAds.instance.ShowMrecBanner(CAS.AdPosition.TopLeft);
+        // AdsManager.instance.ShowMRec();
     }
 
     private void OnDisable() {
-        CASAds.instance.HideMrecBanner();
+        //Nadeem Ads
+        //CASAds.instance.HideMrecBanner();
         // AdsManager.instance.HideMRec();
     }
 }

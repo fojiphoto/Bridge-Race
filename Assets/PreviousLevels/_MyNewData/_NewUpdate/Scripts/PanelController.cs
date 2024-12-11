@@ -55,10 +55,11 @@ public class PanelController : MonoBehaviour
     }
     public void Doublecoins()
     {
-        CASAds.instance.ShowRewarded(() => {
-            PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx*20);
-            levelCoins.text = (Rewardx * 20).ToString();
-        });
+        //Nadeem Ads
+        //CASAds.instance.ShowRewarded(() => {
+        //    PlayerPrefs.SetInt("coins", PlayerPrefs.GetInt("coins") + Rewardx*20);
+        //    levelCoins.text = (Rewardx * 20).ToString();
+        //});
     }
 
     public void Multiplier(int num)

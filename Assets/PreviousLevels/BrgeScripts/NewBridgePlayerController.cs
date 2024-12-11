@@ -121,26 +121,28 @@ public class NewBridgePlayerController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("TenX"))
         {
-            CASAds.instance.ShowRewarded(() => {
-                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
-                Debug.Log("All cudes" + allCudes.Length);
-                StartCoroutine(MoveBricksToBagSequentially(allCudes, 10));
-                collision.gameObject.tag = "Untagged";
-               
-            });
+            //Nadeem Ads
+            //CASAds.instance.ShowRewarded(() => {
+            //    GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+            //    Debug.Log("All cudes" + allCudes.Length);
+            //    StartCoroutine(MoveBricksToBagSequentially(allCudes, 10));
+            //    collision.gameObject.tag = "Untagged";
+
+            //});
             // Get all "cude" bricks in the scene
             Destroy(collision.gameObject.transform.parent.gameObject);
         }
         if (collision.gameObject.CompareTag("Twox"))
         {
-            CASAds.instance.ShowRewarded(() => {
-                GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
-                Debug.Log("All cudes" + allCudes.Length);
-                int bricksToMove = Bag.transform.childCount * 2;
-                StartCoroutine(MoveBricksToBagSequentially(allCudes, bricksToMove));
-                collision.gameObject.tag = "Untagged";
-               
-            });
+            //Nadeem Ads
+            //CASAds.instance.ShowRewarded(() => {
+            //    GameObject[] allCudes = GameObject.FindGameObjectsWithTag("cude");
+            //    Debug.Log("All cudes" + allCudes.Length);
+            //    int bricksToMove = Bag.transform.childCount * 2;
+            //    StartCoroutine(MoveBricksToBagSequentially(allCudes, bricksToMove));
+            //    collision.gameObject.tag = "Untagged";
+
+            //});
             // Get all "cude" bricks in the scene
             Destroy(collision.gameObject.transform.parent.gameObject);
         }

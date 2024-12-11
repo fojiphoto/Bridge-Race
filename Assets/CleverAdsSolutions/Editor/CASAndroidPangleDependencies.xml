@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<dependencies>
-  <androidPackages>
-    <repositories>
-      <repository>https://artifact.bytedance.com/repository/pangle</repository>
-    </repositories>
-    <androidPackage spec="com.cleveradssolutions:pangle:6.1.0.9" version="6.1.0.9"/>
-  </androidPackages>
-</dependencies>

@@ -113,15 +113,16 @@ public class NewCameraDeemBridge : MonoBehaviour
             }
             else
             {
-                 CASAds.instance?.ShowInterstitial();
+                //Nadeem Ads
+                //CASAds.instance?.ShowInterstitial();
                 // gamelost.SetActive(true);
                 panelController.LossPanel.SetActive(true);
                 Debug.Log("Bridge Level Fail " + level);
                  GameAnalyticsSDK.GameAnalytics.NewProgressionEvent(GameAnalyticsSDK.GAProgressionStatus.Fail, "Mode Bridge Runner", "Level " + level);
             }
             //BrgR_declarewin(firstst, secondnd, third);
-            //nadeem
-             CASAds.instance?.ShowInterstitial();
+            //Nadeem Ads
+            //CASAds.instance?.ShowInterstitial();
             //AdsManager.instance.ShowInterstitialWithoutConditions();
             //AdManager_IdyllicGames.ShowInterstitial();
         }
@@ -143,7 +144,8 @@ public class NewCameraDeemBridge : MonoBehaviour
                         // Time.timeScale = 0;
                         //nadeem
                         //AdsManager.instance.ShowInterstitialWithoutConditions();
-                         CASAds.instance?.ShowInterstitial();
+                        //Nadeem Ads
+                        //CASAds.instance?.ShowInterstitial();
                         //AdManager_IdyllicGames.ShowInterstitial();
 
                     }
@@ -166,7 +168,8 @@ public class NewCameraDeemBridge : MonoBehaviour
 
     public void showWin()
     {
-         CASAds.instance?.ShowInterstitial();
+        //Nadeem Ads
+       // CASAds.instance?.ShowInterstitial();
         panelController.levelCoins.text = 20.ToString();
         panelController.LevelNo.text ="LEVEL"+level.ToString();
         panelController.WinPanel.SetActive(true);
@@ -193,14 +196,15 @@ public class NewCameraDeemBridge : MonoBehaviour
     {
         panelController.PausePanel.SetActive(true);
         //pausePanel.SetActive(true);
-         CASAds.instance?.ShowInterstitial();
+        //Nadeem Ads
+        //CASAds.instance?.ShowInterstitial();
         Time.timeScale = 0;
     }
 
     public void ResumeGame()
     {
         pausePanel.SetActive(false);
-        CASAds.instance?.ShowInterstitial();
+       
         Time.timeScale = 1;
     }
 }
