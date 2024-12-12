@@ -45,6 +45,6 @@ public class SabloGDPRSmart : MonoBehaviour
     
     public void OpenPrivacyLink()
     {
-        Application.OpenURL("https://factorialstudio.blogspot.com/2023/01/privacy-policy.html");
+        Application.OpenURL("https://privacy-policy-abi-blaze.blogspot.com/2024/12/privacy-policy.html");
     }
 }
