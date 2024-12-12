@@ -14,11 +14,11 @@ public class AdsManager : MonoBehaviour
 
     private const string MaxSdkKey = "TecxGz9HeSi_iQ5CGuTRWRFTDHtMM_TKk19s1icUkcuQLyS1FNVZ8Kp_McP2XmsoOIqrW7KHyl1Q5itk7RJVnT";//FS
 
-    [SerializeField] private string InterstitialAdUnitIdGeneric = "371e0a128fe53dc5";
-    [SerializeField] private string RewardedAdUnitIdGeneric = "4717cc041ae43506";
-    [SerializeField] private string BannerAdUnitId = "41d378eb489e407f";
+    [SerializeField] private string InterstitialAdUnitIdGeneric = "0a30b48c67079e83";
+    [SerializeField] private string RewardedAdUnitIdGeneric = "709c557ab1a2f9ce";
+    [SerializeField] private string BannerAdUnitId = "3f3462bdffa34e38";
     [SerializeField] private string AppOpenAdUnitId = "";
-    [SerializeField] private string RecID = "391a5dcf150343c7";
+    [SerializeField] private string RecID = "534b9f149d37dd24";
 
     public bool isBannerShowing = false;
     public bool _isAdLoaded;
